@@ -16,6 +16,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: Build & push docker image 
       run: |
-           echo "${{ DOCKERS }}"  | docker login -u "skillassure" --password-stdin
+           echo "${{ secrets.DOCKERS }}"  | docker login -u "skillassure" --password-stdin
            docker build -t skillassure:github-1 .
            docker push skillassure:github-1

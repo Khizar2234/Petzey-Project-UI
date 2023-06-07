@@ -17,5 +17,6 @@ jobs:
     - name: Build & push docker image 
       run: |
            echo "${{ secrets.DOCKERS }}"  | docker login -u "skillassure" --password-stdin
-           docker build -t skillassure:github-1 .
-           docker push skillassure:github-1
+           docker build -t skillassure/github:1 .
+           docker tag github-1 skillassure/github:1
+           docker push skillassure/github:1

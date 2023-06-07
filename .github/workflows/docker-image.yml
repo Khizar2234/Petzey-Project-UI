@@ -19,8 +19,4 @@ jobs:
            echo "${{ secrets.DOCKERS }}"  | docker login -u "skillassure" --password-stdin
            docker build -t skillassure/github:1 .
            docker push skillassure/github:1
-    - name: SonarQube Scan
-      uses: sonarsource/sonarqube-scan-action@master
-      env:
-        SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+    
